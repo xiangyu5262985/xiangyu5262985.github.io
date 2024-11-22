@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Xiangyu Li's Academic Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex; /* Use Flexbox for two-column layout */
+            justify-content: space-between; /* Space between left and right sections */
+        }
+
+        /* Left section (photo, name, email, etc.) */
+        .left-column {
+            width: 20%; /* Set left column to take 20% of the width */
+            padding-right: 20px;
+            text-align: center;
+        }
+
+        .left-column img {
+            width: 250px;
+            height: 250px;
+            border-radius: 20%;
+            border: 5px solid #00bcd4;
+        }
+
+        .left-column h1 {
+            font-size: 2.8em;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .left-column p {
+            font-size: 1.2em;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .left-column a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        .left-column a:hover {
+            text-decoration: underline;
+        }
+
+        /* Optional for styling and spacing */
+        .social-links {
+            margin-top: 20px;
+            text-align: center; /* Centers the icons */
+        }
+        
+        .social-links a {
+            margin: 0 10px; /* Space between icons */
+        }
+        
+        .social-links img {
+            width: 40px; /* Slightly larger icons */
+            height: 40px; /* Maintain aspect ratio */
+            transition: transform 0.3s ease; /* Adds hover effect */
+        }
+        
+        .social-links img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+        /* Right section (main content) */
+        .right-column {
+            width: 70%; /* Set right column to take 70% of the width */
+            padding-left: 20px;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 2.0em;
+            color: #00bcd4;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.0em;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #121212;
+            color: #cccccc;
+        }
+
+        footer p {
+            font-size: 1.0em;
+        }
+
+        footer a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .header-banner {
+            background-color: #00bcd4;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .header-banner h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .header-banner p {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <img src="https://drive.google.com/thumbnail?id=1BrOF26QNgkbSZeBOenYdTFpyoAIkhrp9" alt="Dr. Xiangyu Li">
+            <h1>Dr. Xiangyu Li</h1>
+            <p>Postdoctoral Research Associate</p>
+            <p>University of Sydney</p>
+            <p><a href="mailto:xiangyu.li@usyd.edu.au">xiangyu.li@usyd.edu.au</a></p>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://orcid.org/0000-0002-1913-3028" target="_blank" title="ORCID">
+                    <img src="https://raw.githubusercontent.com/xiangyu5262985/xiangyu.github.io/main/images/or.jpg" alt="ORCID" width="30" height="30">
+                </a>
+            
+                <a href="https://scholar.google.com/citations?user=AGRQYk0AAAAJ" target="_blank" title="Google Scholar">
+                    <img src="https://raw.githubusercontent.com/xiangyu5262985/xiangyu.github.io/main/images/gs.jpg" alt="Google Scholar" width="30" height="30">
+                </a>
+            
+                <a href="https://www.researchgate.net/profile/Xiangyu-Li-51" target="_blank" title="ResearchGate">
+                    <img src="https://raw.githubusercontent.com/xiangyu5262985/xiangyu.github.io/main/images/rg.jpg" alt="ResearchGate" width="30" height="30">
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Header Banner in the Right Column -->
+            <div class="header-banner">
+                <h2>Smart Grid and Sustainable Energy Systems</h2>
+            </div>
+
+            <section>
+                <h2>About Me</h2>
+                <p>I received my Ph.D. from the University of New South Wales (UNSW) under the supervision of Prof. Zhao Yang Dong and A/Prof. Guo Chen. After graduation, I worked as a Postdoctoral Research Associate at UNSW for over a year. Currently, I am a Postdoctoral Research Associate at the University of Sydney, collaborating with Prof. David J. Hill and Dr. Fengji Luo. My research aims to enhance the integration of renewable energy sources into the grid and achieve low-carbon energy and transportation systems.</p>
+            </section>
+
+            <section>
+                <h2>Research Interests</h2>
+                <p>My research focuses on flexible resource management in smart grids, AI-driven autonomous energy systems, energy transactions, transportation electrification, and the application of optimization theory, game theory, and computational intelligence in these areas.</p>
+            </section>
+
+            <section id="research">
+                <h2>Research Directions</h2>
+                <p> The key areas of my work include:</p>
+                <ul>
+                    <li>Smart Grid Flexible Resource Management (Electric Vehicles, Microgrids, Batteries, etc.)</li>
+                    <li>AI-Driven Autonomous Energy Bidding and Management System</li>
+                    <li>Energy Transaction </li>
+                    <li>Transportation Electrification.</li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <p>Here are some of my recent publications:</p>
+                <ul style="font-size: 0.9em; line-height: 1.6;">
+                    <li><strong>X. Li</strong>, F. Luo, C. Zhang, and Z. Y. Dong. "Stochastic EV Charging Dispatch in Unbalanced Three-phase Networks Based on Interpretable Fuzzy Representation of User Preferences." <em>IEEE Transactions on Power Systems</em>, early access, doi: 10.1109/TPWRS.2024.3428834. <a href="https://doi.org/10.1109/TPWRS.2024.3428834">Link</a></li>
+                    <li><strong>X. Li</strong>, G. Chen, C. Li, Z. Xu, F. Luo, and Z. Y. Dong. "Communication-efficient Distributed Pricing for Power-Hydrogen Systems with Electric Vehicles and Renewable Energy Integration." <em>IEEE Transactions on Smart Grid</em>, early access, doi: 10.1109/TSG.2024.3413755. <a href="https://doi.org/10.1109/TSG.2024.3413755">Link</a></li>
+                    <li><strong>X. Li</strong>, C. Yip, Z. Y. Dong, C. Zhang, and B. Wang. "Hierarchical Control on EV Charging Stations for PV Hosting Capacity Maximization in Unbalanced Distribution Networks with Ancillary Service Functions." <em>International Journal of Electrical Power & Energy Systems</em>, vol. 160, 110097, 2024, doi: 10.1016/j.ijepes.2024.110097. <a href="https://doi.org/10.1016/j.ijepes.2024.110097">Link</a></li>
+                    <li><strong>X. Li</strong>, F. Luo, and C. Li. "Multi-agent Deep Reinforcement Learning-based Autonomous Decision-making Framework for Community Virtual Power Plants." <em>Applied Energy</em>, vol. 360, 122813, 2024, doi: 10.1016/j.apenergy.2024. <a href="https://doi.org/10.1016/j.apenergy.2024.122813">Link</a></li>
+                    <li><strong>X. Li</strong>, H. Liu, C. Li, G. Chen, C. Zhang, and Z. Y. Dong. "Deep Reinforcement Learning Based Explainable Pricing Policy for Virtual Storage Rental Service." <em>IEEE Transactions on Smart Grid</em>, vol. 14, no. 6, pp. 4373-4384, Nov. 2023, doi: 10.1109/TSG.2023.3253140. <a href="https://doi.org/10.1109/TSG.2023.3253140">Link</a></li>
+                    <li><strong>X. Li</strong>, C. Li, G. Chen, and Z. Y. Dong. "A Data-driven Joint Chance-constrained Game for Renewable Energy Aggregators in the Local Market." <em>IEEE Transactions on Smart Grid</em>, vol. 14, no. 2, pp. 1430-1440, March 2023, doi: 10.1109/TSG.2022.3163131. <a href="https://doi.org/10.1109/TSG.2022.3163131">Link</a></li>
+                    <li><strong>X. Li</strong>, C. Li, F. Luo, G. Chen, Z. Y. Dong, and T. Huang. "Electric Vehicles Charging Dispatch and Optimal Bidding for Frequency Regulation Based on Intuitionistic Fuzzy Decision Making." <em>IEEE Transactions on Fuzzy Systems</em>, vol. 31, no. 2, pp. 596-608, Feb. 2023, doi: 10.1109/TFUZZ.2022.3220964. <a href="https://doi.org/10.1109/TFUZZ.2022.3220964">Link</a></li>
+                    <li><strong>X. Li</strong>, C. Li, X. Liu, G. Chen, and Z. Y. Dong. "Two-stage Community Energy Trading Under End-edge-cloud Orchestration." <em>IEEE Internet of Things Journal</em>, vol. 10, no. 3, pp. 1961-1972, 1 Feb. 2023, doi: 10.1109/JIOT.2022.3140336. <a href="https://doi.org/10.1109/JIOT.2022.3140336">Link</a></li>
+                    <li><strong>X. Li</strong>, C. Li, G. Chen, and Z. Y. Dong. "A Risk-averse Energy Sharing Market Game for Renewable Energy Microgrid Aggregators." <em>IEEE Transactions on Power Systems</em>, vol. 37, no. 5, pp. 3528-3539, Sept. 2022, doi: 10.1109/TPWRS.2021.3137898. <a href="https://doi.org/10.1109/TPWRS.2021.3137898">Link</a></li>
+                </ul>
+
+
+                <p>For a full list of publications, visit my <a href="https://orcid.org/0000-0002-1913-3028">publication page</a>.</p>
+            </section>
+
+            <section id="professional-activities">
+                <h2>Professional Activities</h2>
+                <p>In addition to my research, I am involved in various academic and professional activities, including:</p>
+                <ul>
+                    <li><strong>Regular Reviewer:</strong> Regularly review articles for high-impact peer-reviewed journals, such as <em>IEEE Transactions on Smart Grid</em>, <em>Applied Energy</em>, and <em>IEEE Transactions on Energy Markets, Policy, and Regulation</em>.</li>
+                    <li><strong>Conference Organization:</strong> Organization Committee (<em>ICSCGE 2024</em>) and Session Chair (<em>ICONIP 2023</em> and <em>EI2 2023</em>).</li>
+                    <li><strong>Guest Lecturer:</strong> Delivered guest lectures on <em>ELEC9781: Energy Storage Systems</em> (Semester 2, 2024) and <em>ELEC3111: Distributed Energy Generation</em> (Semester 3, 2024) at UNSW.</li>
+                </ul>
+            </section>
+            
+            <section id="latest news">
+                <h2>Latest News</h2>
+                <ul>
+                    <li><strong>Invited Talk:</strong> “Electric Vehicle Charging Dispatch in Low-Carbon Energy and Transportation Systems”, Public Research Seminar, The Hong Kong University of Science and Technology, Hong Kong, 13 Aug. 2024.</li>
+                    <li><strong>Invited Talk:</strong> “Application of Deep Reinforcement Learning in Energy Community Pricing Problems”, Interdisciplinary Research Across the Faculty of Engineering, The University of Sydney, Sydney, Australia, 24 Jun. 2024.</li>
+                </ul>
+            </section>
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact: <a href="mailto:xiangyu.li@usyd.edu.au">xiangyu.li@usyd.edu.au</a></p>
+    </footer>
+</body>
+</html>
