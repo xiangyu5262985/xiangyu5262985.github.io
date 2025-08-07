@@ -3,116 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Xiangyu Li Website</title>
+    <title>Dr. Xiangyu Li - HKUST(GZ)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00bcd4;
+            --accent-color: #ff6b6b;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --text-color: #333;
+            --text-light: #6c757d;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-            display: flex; /* Use Flexbox for two-column layout */
-            justify-content: space-between; /* Space between left and right sections */
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
         }
 
-        /* Left section (photo, name, email, etc.) */
+        /* Left column - Profile & Quick Links */
         .left-column {
-            width: 20%; /* Set left column to take 20% of the width */
-            padding-right: 20px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
 
-        .left-column img {
-            width: 250px;
-            height: 250px;
-            border-radius: 20%;
-            border: 5px solid #00bcd4;
-        }
-
-        .left-column h1 {
-            font-size: 2.0 em;
-            margin-top: 20px;
-            color: #333;
-        }
-
-        .left-column p {
-            font-size: 1.2 em;
-            color: #666;
-            margin: 5px 0;
-        }
-
-        .left-column a {
-            color: #00bcd4;
-            text-decoration: none;
-        }
-
-        .left-column a:hover {
-            text-decoration: underline;
-        }
-
-        /* Optional for styling and spacing */
-        .social-links {
-            margin-top: 20px;
-            text-align: center; /* Centers the icons */
-        }
-        
-        .social-links a {
-            margin: 0 10px; /* Space between icons */
-        }
-        
-        .social-links img {
-            width: 30px; /* Slightly larger icons */
-            height: 30px; /* Maintain aspect ratio */
-            transition: transform 0.3s ease; /* Adds hover effect */
-        }
-        
-        .social-links img:hover {
-            transform: scale(1.1); /* Slight zoom effect on hover */
-        }
-        /* Right section (main content) */
-        .right-column {
-            width: 70%; /* Set right column to take 70% of the width */
-            padding-left: 20px;
-        }
-
-        section {
-            margin: 20px 0;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            font-size: 1.8 em;
-            color: #00bcd4;
+        .profile-card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
             margin-bottom: 20px;
         }
 
+        .profile-card h1 {
+            font-size: 1.5rem;
+            margin: 10px 0 5px;
+            color: var(--dark-gray);
+        }
+
+        .profile-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 5px 0;
+        }
+
+        .profile-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .profile-card a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Quick Links */
+        .quick-links-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .quick-links-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .quick-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 8px;
+        }
+
+        .quick-links a {
+            display: block;
+            padding: 8px 12px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .quick-links a:hover {
+            background-color: var(--light-gray);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .quick-links a i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main content column */
+        .main-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .header-banner {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .header-banner h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .header-banner p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        section h2 i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
         section p {
-            font-size: 0.9 em;
-            line-height: 1.6;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Student section styles */
+        .student-section {
+            margin-top: 20px;
+        }
+
+        .student-category {
+            margin-bottom: 20px;
+        }
+
+        .student-category h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .student-category h3 i {
+            margin-right: 8px;
+        }
+
+        .student-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .student-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .student-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .student-info {
+            flex: 1;
+        }
+
+        .student-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .student-status {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Publication styles */
+        .publication-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .publication-item p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .publication-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .publication-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* News styles */
+        .news-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .news-date {
+            font-weight: bold;
+            color: var(--primary-color);
         }
 
         footer {
+            background-color: var(--dark-gray);
+            color: white;
             text-align: center;
             padding: 20px;
-            background-color: #121212;
-            color: #cccccc;
-        }
-
-        footer p {
-            font-size: 0.9 em;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            grid-column: 1 / -1;
         }
 
         footer a {
-            color: #00bcd4;
+            color: var(--secondary-color);
             text-decoration: none;
         }
 
@@ -120,131 +335,240 @@
             text-decoration: underline;
         }
 
-        .header-banner {
-            background-color: #00bcd4;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 1.5em;
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+            
+            .left-column {
+                position: static;
+            }
+            
+            .student-list {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .header-banner h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .header-banner p {
-            font-size: 0.9 em;
-            margin-top: 10px;
+        section {
+            animation: fadeIn 0.5s ease-out forwards;
         }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Left Column -->
+        <!-- Left Column - Profile & Quick Links -->
         <div class="left-column">
-            <img src="https://drive.google.com/thumbnail?id=1BrOF26QNgkbSZeBOenYdTFpyoAIkhrp9" alt="Dr. Xiangyu Li">
-            <h1>Dr. Xiangyu Li</h1>
-            <p>Assistant Professor</p>
-            <p>The Hong Kong University of Science and Technology (Guangzhou)</p>
-            <p><a href="mailto:xiangyul@hkust-gz.edu.cn">xiangyul@hkust-gz.edu.cn</a></p>
+            <div class="profile-card">
+                <img src="https://drive.google.com/thumbnail?id=1BrOF26QNgkbSZeBOenYdTFpyoAIkhrp9" alt="Dr. Xiangyu Li">
+                <h1>Dr. Xiangyu Li</h1>
+                <p>Assistant Professor</p>
+                <p>The Hong Kong University of Science and Technology (Guangzhou)</p>
+                <p><a href="mailto:xiangyul@hkust-gz.edu.cn"><i class="fas fa-envelope"></i> xiangyul@hkust-gz.edu.cn</a></p>
 
-            <!-- Social Media Links -->
-            <div class="social-links">
-                <a href="https://orcid.org/0000-0002-1913-3028" target="_blank" title="ORCID">
-                    <img src="https://raw.githubusercontent.com/xiangyu5262985/xiangyu.github.io/main/images/or.jpg" alt="ORCID" width="30" height="30">
-                </a>
-            
-                <a href="https://scholar.google.com/citations?user=AGRQYk0AAAAJ" target="_blank" title="Google Scholar">
-                    <img src="https://raw.githubusercontent.com/xiangyu5262985/xiangyu.github.io/main/images/gs.jpg" alt="Google Scholar" width="30" height="30">
-                </a>
-            
-                <a href="https://www.researchgate.net/profile/Xiangyu-Li-51" target="_blank" title="ResearchGate">
-                    <img src="https://raw.githubusercontent.com/xiangyu5262985/xiangyu.github.io/main/images/rg.jpg" alt="ResearchGate" width="30" height="30">
-                </a>
+                <div class="social-links">
+                    <a href="https://orcid.org/0000-0002-1913-3028" target="_blank" title="ORCID">
+                        <i class="fab fa-orcid"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=AGRQYk0AAAAJ" target="_blank" title="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Xiangyu-Li-51" target="_blank" title="ResearchGate">
+                        <i class="fab fa-researchgate"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/xiangyu-li-bb59a4222/?originalSubdomain=au" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
 
+            <div class="quick-links-card">
+                <h3>Quick Links</h3>
+                <div class="quick-links">
+                    <ul>
+                        <li><a href="#about"><i class="fas fa-arrow-right"></i> About Me</a></li>
+                        <li><a href="#research-interests"><i class="fas fa-arrow-right"></i> Research Interests</a></li>
+                        <li><a href="#positions"><i class="fas fa-arrow-right"></i> Open Positions</a></li>
+                        <li><a href="#publications"><i class="fas fa-arrow-right"></i> Publications</a></li>
+                        <li><a href="#activities"><i class="fas fa-arrow-right"></i> Professional Services</a></li>
+                        <li><a href="#team-current"><i class="fas fa-arrow-right"></i> Current Students</a></li>
+                        <li><a href="#team-alumni"><i class="fas fa-arrow-right"></i> Alumni</a></li>
+                        <li><a href="#news"><i class="fas fa-arrow-right"></i> Latest News</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <!-- Right Column -->
-        <div class="right-column">
-            <!-- Header Banner in the Right Column -->
+        <!-- Main Content Column -->
+        <div class="main-column">
             <div class="header-banner">
                 <h2>Smart Grid and Sustainable Energy Systems</h2>
+                <p>Advancing renewable energy integration and grid flexibility for a sustainable future</p>
             </div>
 
-            <section>
-                <h2>About Me</h2>
-                <p>I received my Ph.D. from the University of New South Wales (UNSW) under the supervision of Prof. Zhao Yang Dong and A/Prof. Guo Chen. Prior to joining HKUST(GZ), I worked as a postdoctoral researcher at the University of New South Wales and the University of Sydney. My research aims to enhance the integration of renewable energy sources into the grid and achieve low-carbon energy and transportation systems.</p>
+            <section id="about">
+                <h2><i class="fas fa-user"></i> About Me</h2>
+                <p>I earned my Ph.D. from the University of New South Wales (UNSW) under the supervision of Prof. Zhao Yang Dong and A/Prof. Guo Chen. Before joining HKUST(GZ), I worked as a postdoctoral researcher at both UNSW and the University of Sydney, collaborating with Prof. David J. Hill and Dr. Fengji Luo. My research focuses on advancing the integration of renewable energy and flexible resources into power grids to enable low-carbon energy and transportation systems.</p>
             </section>
 
-            <section>
-                <h2>Research Interests</h2>
-                <p>My research focuses on flexible resource management in smart grids, AI-driven autonomous energy systems, energy transactions, transportation electrification, and the application of optimization theory, game theory, and computational intelligence in these areas.</p>
-            </section>
-
-            <section id="research">
-                <h2>Research Directions</h2>
-                <p> The key areas of my work include:</p>
-                <ul style="font-size: 0.9em; line-height: 1.6;">
-                    <li>Smart Grid Flexible Resource Management (Electric Vehicles, Microgrids, Batteries, etc.)</li>
-                    <li>AI-Driven Autonomous Energy Bidding and Management System</li>
-                    <li>Energy Transaction </li>
-                    <li>Transportation Electrification</li>
+            <section id="research-interests">
+                <h2><i class="fas fa-flask"></i> Research Interests</h2>
+                <p>My research develops advanced AI, optimization, and game-theoretic approaches for next-generation energy systems.</p>
+                <ul>
+                    <li>Flexible resource management in smart grids (EVs, VPPs, eVTOLs, Batteries)</li>
+                    <li>AI-driven autonomous energy systems and bidding strategies</li>
+                    <li>Distributed energy transactions and market mechanisms</li>
+                    <li>Transportation electrification and low-carbon energy systems</li>
                 </ul>
             </section>
-            
-            <section id="open positions">
-                <h2>Open positions</h2>
-                <p> Long-term Openings for Postdoctoral Researchers, PhD candidates, MPhil students, and Research Assistants in STEM disciplines (Electrical Engineering, Artificial Intelligence, Operations Research/Optimization, and related fields). </p>
-                <p> Candidates with a strong publication record in top-tier journals or conferences and demonstrated self-motivation are preferred.</p>
+
+            <section id="positions">
+                <h2><i class="fas fa-bullhorn"></i> Open Positions</h2>
+                <p>We are seeking motivated researchers at all levels with expertise in Electrical Engineering, AI, Statistics, Operations Research/Optimization, Transportation, or related STEM fields:</p>
+                <ul>
+                    <li><strong>Postdoctoral Researchers:</strong> Applicants should have a strong publication record in top-tier journals/conferences and demonstrated research independence.</li>
+                    <li><strong>PhD Candidates:</strong> We prefer candidates with prior research experience, strong academic potential, and self-motivation.</li>
+                    <li><strong>MPhil Students:</strong> Opportunities available in smart grid technologies and sustainable energy systems research.</li>
+                    <li><strong>Research Assistants:</strong> Positions open for outstanding undergraduate and master's students.</li>
+                </ul>
+                <p>Prospective candidates are encouraged to contact me with their CV and research interests.</p>
             </section>
             
             <section id="publications">
-                <h2>Publications</h2>
-                <p>Here are some of my recent publications:</p>
-                <ul style="font-size: 0.9em; line-height: 1.6;">
-                    <li><strong>X. Li</strong>, F. Luo, C. Zhang, and Z. Y. Dong. "Stochastic EV Charging Dispatch in Unbalanced Three-phase Networks Based on Interpretable Fuzzy Representation of User Preferences." <em>IEEE Transactions on Power Systems</em>, vol. 40, no. 2, pp. 1623-1635, March 2025, doi: 10.1109/TPWRS.2024.3428834. <a href="https://doi.org/10.1109/TPWRS.2024.3428834">Link</a></li>
-                    <li><strong>X. Li</strong>, G. Chen, C. Li, Z. Xu, F. Luo, and Z. Y. Dong. "Communication-efficient Distributed Pricing for Power-Hydrogen Systems with Electric Vehicles and Renewable Energy Integration." <em>IEEE Transactions on Smart Grid</em>, vol. 16, no. 1, pp. 541-553, Jan. 2025, doi: 10.1109/TSG.2024.3413755. <a href="https://doi.org/10.1109/TSG.2024.3413755">Link</a></li>
-                    <li><strong>X. Li</strong>, C. Yip, Z. Y. Dong, C. Zhang, and B. Wang. "Hierarchical Control on EV Charging Stations for PV Hosting Capacity Maximization in Unbalanced Distribution Networks with Ancillary Service Functions." <em>International Journal of Electrical Power & Energy Systems</em>, vol. 160, 110097, 2024, doi: 10.1016/j.ijepes.2024.110097. <a href="https://doi.org/10.1016/j.ijepes.2024.110097">Link</a></li>
-                    <li><strong>X. Li</strong>, F. Luo, and C. Li. "Multi-agent Deep Reinforcement Learning-based Autonomous Decision-making Framework for Community Virtual Power Plants." <em>Applied Energy</em>, vol. 360, 122813, 2024, doi: 10.1016/j.apenergy.2024. <a href="https://doi.org/10.1016/j.apenergy.2024.122813">Link</a></li>
-                    <li><strong>X. Li</strong>, H. Liu, C. Li, G. Chen, C. Zhang, and Z. Y. Dong. "Deep Reinforcement Learning Based Explainable Pricing Policy for Virtual Storage Rental Service." <em>IEEE Transactions on Smart Grid</em>, vol. 14, no. 6, pp. 4373-4384, Nov. 2023, doi: 10.1109/TSG.2023.3253140. <a href="https://doi.org/10.1109/TSG.2023.3253140">Link</a></li>
-                    <li><strong>X. Li</strong>, C. Li, G. Chen, and Z. Y. Dong. "A Data-driven Joint Chance-constrained Game for Renewable Energy Aggregators in the Local Market." <em>IEEE Transactions on Smart Grid</em>, vol. 14, no. 2, pp. 1430-1440, March 2023, doi: 10.1109/TSG.2022.3163131. <a href="https://doi.org/10.1109/TSG.2022.3163131">Link</a></li>
-                    <li><strong>X. Li</strong>, C. Li, F. Luo, G. Chen, Z. Y. Dong, and T. Huang. "Electric Vehicles Charging Dispatch and Optimal Bidding for Frequency Regulation Based on Intuitionistic Fuzzy Decision Making." <em>IEEE Transactions on Fuzzy Systems</em>, vol. 31, no. 2, pp. 596-608, Feb. 2023, doi: 10.1109/TFUZZ.2022.3220964. <a href="https://doi.org/10.1109/TFUZZ.2022.3220964">Link</a></li>
-                    <li><strong>X. Li</strong>, C. Li, X. Liu, G. Chen, and Z. Y. Dong. "Two-stage Community Energy Trading Under End-edge-cloud Orchestration." <em>IEEE Internet of Things Journal</em>, vol. 10, no. 3, pp. 1961-1972, 1 Feb. 2023, doi: 10.1109/JIOT.2022.3140336. <a href="https://doi.org/10.1109/JIOT.2022.3140336">Link</a></li>
-                    <li><strong>X. Li</strong>, C. Li, G. Chen, and Z. Y. Dong. "A Risk-averse Energy Sharing Market Game for Renewable Energy Microgrid Aggregators." <em>IEEE Transactions on Power Systems</em>, vol. 37, no. 5, pp. 3528-3539, Sept. 2022, doi: 10.1109/TPWRS.2021.3137898. <a href="https://doi.org/10.1109/TPWRS.2021.3137898">Link</a></li>
-                </ul>
+                <h2><i class="fas fa-book"></i> Selected Publications</h2>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, F. Luo, C. Zhang, and Z. Y. Dong. "Stochastic EV Charging Dispatch in Unbalanced Three-phase Networks Based on Interpretable Fuzzy Representation of User Preferences." <em>IEEE Transactions on Power Systems</em>, vol. 40, no. 2, pp. 1623-1635, March 2025. <a href="https://doi.org/10.1109/TPWRS.2024.3428834">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, G. Chen, C. Li, Z. Xu, F. Luo, and Z. Y. Dong. "Communication-efficient Distributed Pricing for Power-Hydrogen Systems with Electric Vehicles and Renewable Energy Integration." <em>IEEE Transactions on Smart Grid</em>, vol. 16, no. 1, pp. 541-553, Jan. 2025. <a href="https://doi.org/10.1109/TSG.2024.3413755">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, C. Yip, Z. Y. Dong, C. Zhang, and B. Wang. "Hierarchical Control on EV Charging Stations for PV Hosting Capacity Maximization in Unbalanced Distribution Networks with Ancillary Service Functions." <em>International Journal of Electrical Power & Energy Systems</em>, vol. 160, 110097, 2024. <a href="https://doi.org/10.1016/j.ijepes.2024.110097">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, F. Luo, and C. Li. "Multi-agent Deep Reinforcement Learning-based Autonomous Decision-making Framework for Community Virtual Power Plants." <em>Applied Energy</em>, vol. 360, 122813, 2024. <a href="https://doi.org/10.1016/j.apenergy.2024.122813">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, H. Liu, C. Li, G. Chen, C. Zhang, and Z. Y. Dong. "Deep Reinforcement Learning Based Explainable Pricing Policy for Virtual Storage Rental Service." <em>IEEE Transactions on Smart Grid</em>, vol. 14, no. 6, pp. 4373-4384, Nov. 2023. <a href="https://doi.org/10.1109/TSG.2023.3253140">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, C. Li, G. Chen, and Z. Y. Dong. "A Data-driven Joint Chance-constrained Game for Renewable Energy Aggregators in the Local Market." <em>IEEE Transactions on Smart Grid</em>, vol. 14, no. 2, pp. 1430-1440, March 2023. <a href="https://doi.org/10.1109/TSG.2022.3163131">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, C. Li, F. Luo, G. Chen, Z. Y. Dong, and T. Huang. "Electric Vehicles Charging Dispatch and Optimal Bidding for Frequency Regulation Based on Intuitionistic Fuzzy Decision Making." <em>IEEE Transactions on Fuzzy Systems</em>, vol. 31, no. 2, pp. 596-608, Feb. 2023. <a href="https://doi.org/10.1109/TFUZZ.2022.3220964">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, C. Li, X. Liu, G. Chen, and Z. Y. Dong. "Two-stage Community Energy Trading Under End-edge-cloud Orchestration." <em>IEEE Internet of Things Journal</em>, vol. 10, no. 3, pp. 1961-1972, Feb. 2023. <a href="https://doi.org/10.1109/JIOT.2022.3140336">[Link]</a></p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>X. Li</strong>, C. Li, G. Chen, and Z. Y. Dong. "A Risk-averse Energy Sharing Market Game for Renewable Energy Microgrid Aggregators." <em>IEEE Transactions on Power Systems</em>, vol. 37, no. 5, pp. 3528-3539, Sept. 2022. <a href="https://doi.org/10.1109/TPWRS.2021.3137898">[Link]</a></p>
+                </div>
+                <p style="font-size:0.9em; margin-top:15px;">For a full list of publications, visit my <a href="https://orcid.org/0000-0002-1913-3028">ORCID profile</a> or <a href="https://scholar.google.com/citations?user=AGRQYk0AAAAJ">Google Scholar</a>.</p>
+            </section>
+            
+            <section id="activities">
+                <h2><i class="fas fa-chalkboard-teacher"></i> Professional Services</h2>
+                <p><strong>Journal Editor:</strong> Youth Editor and Advisory Board Member for <em>Protection and Control of Modern Power Systems (PCMP)</em> and <em>Energy Conversion and Economics (ECE)</em>.</p>
+                <p><strong>Journal Reviewing:</strong> Regularly review for <em>IEEE Transactions on Smart Grid</em>, <em>Applied Energy</em>, <em>IEEE Transactions on Energy Markets</em>, and other leading journals.</p>
+                <p><strong>Conference Roles:</strong> Organization Committee Member (ICSCGE 2024), Technical Committee Member (CSCSG 2024), Session Chair (SmartGridComm 2025, ICONIP 2023).</p>
+                <p><strong>Teaching:</strong> Guest lectures on energy storage systems and distributed energy generation at UNSW.</p>
+            </section>
+            
+            <section id="team">
+                <h2><i class="fas fa-users"></i> Research Team</h2>
+                
+                <div class="student-section" id="team-current">
+                    <h3><i class="fas fa-user-graduate"></i> Current Students</h3>
+                    <div class="student-list">
+                        <div class="student-item">
+                            <div class="student-avatar">RL</div>
+                            <div class="student-info">
+                                <div class="student-name">Ruijin Liang</div>
+                                <div class="student-status">PhD Candidate (2025-present)</div>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">YZ</div>
+                            <div class="student-info">
+                                <div class="student-name">Yanmeng Zhang</div>
+                                <div class="student-status">PhD Candidate (2025-present)</div>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">CY</div>
+                            <div class="student-info">
+                                <div class="student-name">Chuhong Yang</div>
+                                <div class="student-status">PhD Candidate (2025-present)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="student-section" id="team-alumni">
+                    <h3><i class="fas fa-user-tie"></i> Alumni</h3>
+                    <div class="student-list">
+                        <div class="student-item">
+                            <div class="student-avatar">ZH</div>
+                            <div class="student-info">
+                                <div class="student-name">Zhenyu Huang</div>
+                                <div class="student-status">Research Associate (2025), Now Postdoc at Nanyang Technological University</div>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">DJ</div>
+                            <div class="student-info">
+                                <div class="student-name">Ding Jin</div>
+                                <div class="student-status">Research Assistant (2025), Now PhD Candidate at University of Macau</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <section id="news">
+                <h2><i class="fas fa-newspaper"></i> Latest News</h2>
+                <div class="news-item">
+                    <p><span class="news-date">Aug. 2025:</span> <strong>Invited Speaker</strong> at 2025 4th International Conference on Power Systems and Electrical Technology (PSET), Tokyo, Japan. <em>Topic:</em> "AI-Driven Energy Bidding and Management for Virtual Power Plants in Local Ancillary Services Markets."</p>
+                </div>
+                <div class="news-item">
+                    <p><span class="news-date">Jul. 2025:</span> <strong>Appointed</strong> as Youth Editor for <em>Protection and Control of Modern Power Systems</em>.</p>
+                </div>
+                <div class="news-item">
+                    <p><span class="news-date">Jun. 2025:</span> <strong>Awarded</strong> the Chinese Government Award for Outstanding Self-financed Students Abroad (Category B, Global 50 Recipients).</p>
+                </div>
+                <div class="news-item">
+                    <p><span class="news-date">May 2025:</span> <strong>Appointed</strong> as Young Advisory Board Member for <em>Energy Conversion and Economics</em>.</p>
+                </div>
+                <div class="news-item">
+                    <p><span class="news-date">Nov. 2024:</span> <strong>Invited Speaker</strong> at 2024 International Conference on Smart Cities and Smart Grid (CSCSG), Sydney, Australia. <em>Topic:</em> "Communication-Efficient Distributed Pricing for Power-Hydrogen Systems with Electric Vehicles and Renewable Energy Integration."</p>
+                </div>
+                <div class="news-item">
+                    <p><span class="news-date">Aug. 2024:</span> <strong>Delivered</strong> public research seminar at The Hong Kong University of Science and Technology. <em>Topic:</em> "Electric Vehicle Charging Dispatch in Low-Carbon Energy Systems."</p>
+                </div>
+                <div class="news-item">
+                    <p><span class="news-date">Jun. 2024:</span> <strong>Delivered</strong> public research seminar at The University of Sydney. <em>Topic:</em> "Application of Deep Reinforcement Learning in Energy Community Pricing Problems."</p>
+                </div>
+            </section>
 
-                <p>For a full list of publications, visit my <a href="https://orcid.org/0000-0002-1913-3028">publication page</a>.</p>
-            </section>
-            
-            <section id="professional-activities">
-                <h2>Professional Activities</h2>
-                <p>In addition to my research, I am involved in various academic and professional activities, including:</p>
-                <ul style="font-size: 0.9em; line-height: 1.6;">
-                    <li><strong>Regular Reviewer:</strong> Regularly review articles for high-impact peer-reviewed journals, such as <em>IEEE Transactions on Smart Grid</em>, <em>Applied Energy</em>, and <em>IEEE Transactions on Energy Markets, Policy, and Regulation</em>.</li>
-                    <li><strong>Conference Organization:</strong> Organization Committee Member (<em>ICSCGE 2024</em>), </strong> Technical Committee Member (<em>CSCSG 2024</em>) and Session Chair (<em>SmartGridComm 2025<em>, <em>ICONIP 2023</em> and <em>EI2 2023</em>).</li>
-                    <li><strong>Guest Lecturer:</strong> Delivered guest lectures on <em>ELEC9781: Energy Storage Systems</em> (Semester 2, 2024) and <em>ELEC3111: Distributed Energy Generation</em> (Semester 3, 2024) at UNSW.</li>
-                </ul>
-            </section>
-            
-            <section id="latest news">
-                <h2>Latest News</h2>
-                <ul style="font-size: 0.9em; line-height: 1.6;">
-                    <li><strong>Awarded</strong> the Chinese Government Award for Outstanding Self-financed Students Abroad (Category B, Global Top 50 Recipients) in June 2025.</li>
-                    <li><strong>Appointed</strong> as Young Advisory Board Member for <em>Energy Conversion and Economics</em> in May 2025.</li>
-                    <li><strong>Invited Speaker: </strong> 2024 International Conference on Smart Cities and Smart Grid (CSCSG 2024), “Communication-Efficient Distributed Pricing for Power-Hydrogen Systems with Electric Vehicles and Renewable Energy Integration,” Sydney, Australia, 28 Nov. 2024.</li>   
-                    <li><strong>Invited Talk: </strong> Public Research Seminar, The Hong Kong University of Science and Technology, “Electric Vehicle Charging Dispatch in Low-Carbon Energy and Transportation Systems”, Hong Kong, 13 Aug. 2024.</li>
-                    <li><strong>Invited Talk: </strong> Interdisciplinary Research Across the Faculty of Engineering, the University of Sydney, “Application of Deep Reinforcement Learning in Energy Community Pricing Problems”, Sydney, Australia, 24 Jun. 2024.</li>
-                </ul>
-            </section>
-            
         </div>
     </div>
 
     <footer>
+        <p>&copy; 2025 Dr. Xiangyu Li | The Hong Kong University of Science and Technology (Guangzhou)</p>
         <p>Contact: <a href="mailto:xiangyul@hkust-gz.edu.cn">xiangyul@hkust-gz.edu.cn</a></p>
     </footer>
 </body>
